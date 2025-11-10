@@ -29,7 +29,13 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepublishOnly": "pnpm run lint",
+    "version": "git add -A",
+    "publish": "pnpm publish --access public",
+    "publish:patch": "pnpm version patch && pnpm run publish",
+    "publish:minor": "pnpm version minor && pnpm run publish",
+    "publish:major": "pnpm version major && pnpm run publish"
   },
   "peerDependencies": {
     "@antfu/eslint-config": "^6.0.0",
