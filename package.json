@@ -1,0 +1,46 @@
+{
+  "name": "@iswangh/eslint-config",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "基于 @antfu/eslint-config 的 ESLint 配置，集成了 Vue、TypeScript 和 JSX 支持",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/iswangh/eslint-config.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "antfu"
+  ],
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "import": "./index.ts"
+    }
+  },
+  "main": "./index.ts",
+  "files": [
+    "README.md",
+    "configs",
+    "eslint.config.js",
+    "eslint.config.ts",
+    "index.ts"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "@antfu/eslint-config": "^6.0.0",
+    "eslint": "^9.0.0",
+    "eslint-plugin-unused-imports": "^4.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^6.2.0",
+    "eslint": "^9.39.1",
+    "eslint-plugin-unused-imports": "^4.3.0",
+    "jiti": "^2.6.1",
+    "typescript": "^5.9.3"
+  }
+}
