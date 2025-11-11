@@ -37,7 +37,6 @@
     "lint:fix": "eslint . --fix",
     "prepublishOnly": "nr lint",
     "version": "git add -A",
-    "publish": "pnpm publish",
     "publish:patch": "pnpm version patch && pnpm publish",
     "publish:minor": "pnpm version minor && pnpm publish",
     "publish:major": "pnpm version major && pnpm publish"
