@@ -36,11 +36,12 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepublishOnly": "node scripts/check-branch.js && nr lint",
+    "check:branch": "node scripts/check-branch.js",
+    "prepublishOnly": "nr lint",
     "version": "git add -A",
-    "publish:patch": "pnpm version patch && pnpm publish",
-    "publish:minor": "pnpm version minor && pnpm publish",
-    "publish:major": "pnpm version major && pnpm publish"
+    "publish:patch": "nr check:branch && pnpm version patch && pnpm publish",
+    "publish:minor": "nr check:branch && pnpm version minor && pnpm publish",
+    "publish:major": "nr check:branch && pnpm version major && pnpm publish"
   },
   "peerDependencies": {
     "@antfu/eslint-config": "^6.0.0",
