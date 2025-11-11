@@ -30,12 +30,13 @@
     "eslint.config.js",
     "eslint.config.ts",
     "index.js",
-    "index.ts"
+    "index.ts",
+    "scripts"
   ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepublishOnly": "nr lint",
+    "prepublishOnly": "node scripts/check-branch.js && nr lint",
     "version": "git add -A",
     "publish:patch": "pnpm version patch && pnpm publish",
     "publish:minor": "pnpm version minor && pnpm publish",
