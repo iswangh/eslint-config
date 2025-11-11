@@ -10,6 +10,8 @@ import iswangh from '@iswangh/eslint-config'
 /**
  * ESLint 配置
  *
- * @type {ReturnType<typeof import('@antfu/eslint-config').default>}
+ * 使用 @iswangh/eslint-config 提供的默认配置
+ *
+ * @type {ReturnType<typeof iswangh>}
  */
 export default iswangh()

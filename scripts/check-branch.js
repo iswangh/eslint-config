@@ -7,7 +7,14 @@
 import { execSync } from 'node:child_process'
 import process from 'node:process'
 
+/**
+ * 允许发布的分支列表
+ */
 const ALLOWED_BRANCHES = ['main', 'master']
+
+/**
+ * 获取当前 Git 分支名称
+ */
 const currentBranch = execSync('git branch --show-current', { encoding: 'utf-8' }).trim()
 
 if (!ALLOWED_BRANCHES.includes(currentBranch)) {

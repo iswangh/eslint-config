@@ -28,14 +28,16 @@
 
 ### 对等依赖
 
-- **@antfu/eslint-config**: `^6.0.0` - 基础 ESLint 配置
+- **@antfu/eslint-config**: `^6.2.0` - 基础 ESLint 配置
 - **eslint**: `^9.0.0` - ESLint 核心
-- **eslint-plugin-unused-imports**: `^4.0.0` - 未使用导入检测插件
+- **eslint-plugin-format**: `^1.0.0` - 代码格式化插件
+- **eslint-plugin-unused-imports**: `^4.3.0` - 未使用导入检测插件
 
 ### 开发依赖
 
 - **@antfu/eslint-config**: `^6.2.0` - 开发时使用的 ESLint 配置（用于项目自身）
 - **eslint**: `^9.39.1` - ESLint 核心（用于项目自身）
+- **eslint-plugin-format**: `^1.0.2` - 代码格式化插件（用于项目自身）
 - **eslint-plugin-unused-imports**: `^4.3.0` - 未使用导入检测插件（用于项目自身）
 - **TypeScript**: `^5.9.3` - TypeScript 编译器
 
@@ -43,21 +45,24 @@
 
 ```
 eslint-config/
-├── configs/              # 配置模块目录
-│   ├── antfu.ts          # Antfu 基础配置
-│   ├── global.ts          # 全局规则配置
-│   ├── ignores.ts         # 忽略文件配置
-│   ├── typescript.ts      # TypeScript 规则配置
-│   ├── unused-imports.ts  # 未使用导入规则配置
-│   ├── vue.ts             # Vue 规则配置
-│   └── index.ts           # 配置模块聚合导出
-├── eslint.config.js       # ESLint 配置示例（JavaScript）
-├── eslint.config.ts       # ESLint 配置示例（TypeScript）
-├── index.js               # 主入口文件（JavaScript 包装，用于支持 JS 配置文件）
-├── index.ts               # 主入口文件（TypeScript 实现）
-├── package.json           # 项目配置文件
-├── tsconfig.json          # TypeScript 配置
-└── README.md              # 项目文档
+├── src/                   # 源代码目录
+│   └── configs/          # 配置模块目录
+│       ├── antfu.ts      # Antfu 基础配置
+│       ├── global.ts     # 全局规则配置
+│       ├── ignores.ts    # 忽略文件配置
+│       ├── typescript.ts # TypeScript 规则配置
+│       ├── unused-imports.ts # 未使用导入规则配置
+│       ├── vue.ts        # Vue 规则配置
+│       └── index.ts      # 配置模块聚合导出
+├── scripts/              # 脚本目录
+│   └── check-branch.js  # Git 分支检查脚本
+├── eslint.config.js     # ESLint 配置示例（JavaScript）
+├── eslint.config.ts     # ESLint 配置示例（TypeScript）
+├── index.js             # 主入口文件（JavaScript 包装，用于支持 JS 配置文件）
+├── index.ts             # 主入口文件（TypeScript 实现）
+├── package.json         # 项目配置文件
+├── tsconfig.json        # TypeScript 配置
+└── README.md            # 项目文档
 ```
 
 ## 快速开始
@@ -96,7 +101,9 @@ yarn add -D @iswangh/eslint-config
 
 ```javascript
 /**
- * @file ESLint 配置文件
+ * @file ESLint 配置文件示例（JavaScript）
+ *
+ * 使用 @iswangh/eslint-config 的 JavaScript 配置示例
  * @ts-check
  */
 
@@ -105,7 +112,9 @@ import iswangh from '@iswangh/eslint-config'
 /**
  * ESLint 配置
  *
- * @type {ReturnType<typeof import('@antfu/eslint-config').default>}
+ * 使用 @iswangh/eslint-config 提供的默认配置
+ *
+ * @type {ReturnType<typeof iswangh>}
  */
 export default iswangh()
 ```
@@ -115,8 +124,21 @@ export default iswangh()
 创建 `eslint.config.ts`：
 
 ```typescript
+/**
+ * @file ESLint 配置文件示例（TypeScript）
+ *
+ * 使用 @iswangh/eslint-config 的 TypeScript 配置示例
+ */
+
 import iswangh from '@iswangh/eslint-config'
 
+/**
+ * ESLint 配置
+ *
+ * 使用 @iswangh/eslint-config 提供的默认配置
+ *
+ * @type {ReturnType<typeof iswangh>}
+ */
 export default iswangh()
 ```
 

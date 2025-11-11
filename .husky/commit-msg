@@ -1,0 +1,29 @@
+# 验证提交信息格式，确保符合 Conventional Commits 规范
+echo "📋 正在验证提交信息..."
+echo "────────────────────────────────────────"
+
+# 执行 commitlint 命令
+# 直接使用 pnpm exec 执行 commitlint 命令，无需通过 package.json 脚本
+pnpm exec commitlint --edit "$1" || {
+  echo ""
+  echo "❌ 提交信息格式验证失败!"
+  echo ""
+  echo "请遵循约定式提交格式:"
+  echo "  <type>(<scope>): <subject>"
+  echo ""
+  echo "常用类型:"
+  echo "  feat:     🚀 新功能"
+  echo "  fix:      🐛 修复bug"
+  echo "  refactor: 🔨 代码重构"
+  echo "  style:    🎨 代码格式调整"
+  echo "  perf:     ⚡ 性能优化"
+  echo "  test:     🧪 测试相关"
+  echo "  build:    📦 构建配置"
+  echo "  ci:       🤖 CI配置"
+  echo "  docs:     📚 文档更新"
+  echo "  chore:    🔧 日常维护"
+  echo "  revert:   🗑️ 回滚操作"
+  exit 1
+}
+
+echo "✅ 提交信息格式正确!"
