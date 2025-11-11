@@ -2,7 +2,8 @@
   "name": "@iswangh/eslint-config",
   "type": "module",
   "version": "0.1.0",
-  "description": "基于 @antfu/eslint-config 的 ESLint 配置，集成了 Vue、TypeScript 和 JSX 支持",
+  "description": "基于 @antfu/eslint-config 的 ESLint 扁平配置，添加了自定义规则（TypeScript 命名约定、Vue TypeScript 强制、未使用导入检测等），支持 JavaScript 和 TypeScript 配置文件",
+  "author": "iswangh <https://gitee.com/iswangh>",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
@@ -11,42 +12,45 @@
   "keywords": [
     "eslint",
     "eslint-config",
-    "antfu"
+    "@antfu/eslint-config"
   ],
   "exports": {
     ".": {
       "types": "./index.ts",
-      "import": "./index.ts"
+      "import": "./index.js"
     }
   },
-  "main": "./index.ts",
+  "main": "./index.js",
   "files": [
     "README.md",
     "configs",
     "eslint.config.js",
     "eslint.config.ts",
+    "index.js",
     "index.ts"
   ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepublishOnly": "pnpm run lint",
+    "prepublishOnly": "nr lint",
     "version": "git add -A",
     "publish": "pnpm publish --access public",
-    "publish:patch": "pnpm version patch && pnpm run publish",
-    "publish:minor": "pnpm version minor && pnpm run publish",
-    "publish:major": "pnpm version major && pnpm run publish"
+    "publish:patch": "pnpm version patch && nr publish",
+    "publish:minor": "pnpm version minor && nr publish",
+    "publish:major": "pnpm version major && nr publish"
   },
   "peerDependencies": {
     "@antfu/eslint-config": "^6.0.0",
     "eslint": "^9.0.0",
     "eslint-plugin-unused-imports": "^4.0.0"
   },
+  "dependencies": {
+    "jiti": "^2.6.1"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^6.2.0",
     "eslint": "^9.39.1",
     "eslint-plugin-unused-imports": "^4.3.0",
-    "jiti": "^2.6.1",
     "typescript": "^5.9.3"
   }
 }

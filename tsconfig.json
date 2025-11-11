@@ -1,19 +1,24 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022", "DOM"],
+    "lib": ["ES2022"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
+    "allowImportingTsExtensions": false,
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
     "isolatedModules": true,
+    "verbatimModuleSyntax": false,
     "skipLibCheck": true
   },
   "include": [
     "index.ts",
-    "configs/**/*"
+    "index.js",
+    "configs/**/*",
+    "eslint.config.ts",
+    "eslint.config.js"
   ],
   "exclude": [
     "node_modules",

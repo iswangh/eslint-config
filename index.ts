@@ -19,7 +19,7 @@ import { antfuConfig, globalConfig, ignoresConfig, typescriptConfig, unusedImpor
  *
  * 使用方式与 antfu() 相同：
  * ```typescript
- * wangh(
+ * iswangh(
  *   { vue: true, typescript: true, rules: { ... } },
  *   { plugins: { ... } },
  *   { rules: { ... } },
@@ -29,9 +29,9 @@ import { antfuConfig, globalConfig, ignoresConfig, typescriptConfig, unusedImpor
  *
  * @param {OptionsConfig & Omit<TypedFlatConfigItem, 'files'>} [options] - @antfu/eslint-config 的配置选项，会与默认配置合并
  * @param {...TypedFlatConfigItem} userConfigs - 用户传入的额外配置对象，会追加到默认配置之后
- * @returns {ReturnType<typeof antfu>} ESLint 扁平配置数组
+ * @returns {TypedFlatConfigItem[]} ESLint 扁平配置数组
  */
-export default function wangh(
+export default function iswangh(
   options?: OptionsConfig & Omit<TypedFlatConfigItem, 'files'>,
   ...userConfigs: TypedFlatConfigItem[]
 ) {
@@ -43,7 +43,7 @@ export default function wangh(
     ...userConfigs.map(config => config.rules),
   ]
     .filter((rules): rules is NonNullable<typeof rules> => Boolean(rules))
-    .reduce((acc, rules) => ({ ...acc, ...rules }), {})
+    .reduce<Record<string, unknown>>((acc, rules) => ({ ...acc, ...rules }), {})
 
   return antfu(
     { ...antfuConfig, ...restOptions } as OptionsConfig & Omit<TypedFlatConfigItem, 'files'> & { ignores?: string[] },

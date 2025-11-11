@@ -4,6 +4,6 @@
  * 使用 @iswangh/eslint-config 的 TypeScript 配置示例
  */
 
-import wangh from '@iswangh/eslint-config'
+import iswangh from '@iswangh/eslint-config'
 
-export default wangh()
+export default iswangh()

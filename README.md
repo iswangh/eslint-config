@@ -1,10 +1,10 @@
 # @iswangh/eslint-config
 
-基于 [@antfu/eslint-config](https://github.com/antfu/eslint-config) 的 ESLint 配置，集成了 Vue、TypeScript 和 JSX 支持。
+基于 [@antfu/eslint-config](https://github.com/antfu/eslint-config) 的 ESLint 扁平配置，添加了自定义规则（TypeScript 命名约定、Vue TypeScript 强制、未使用导入检测等），支持 JavaScript 和 TypeScript 配置文件。
 
 ## 项目介绍
 
-`@iswangh/eslint-config` 是一个基于 `@antfu/eslint-config` 的 ESLint 配置包，提供了开箱即用的代码规范配置。该配置集成了 Vue、TypeScript 和 JSX 支持，并添加了自定义规则，适用于现代前端项目的代码质量保障。
+`@iswangh/eslint-config` 是一个基于 `@antfu/eslint-config` 的 ESLint 扁平配置包，提供了开箱即用的代码规范配置。该配置在 `@antfu/eslint-config` 的基础上添加了自定义规则，包括 TypeScript 命名约定、Vue 文件强制使用 TypeScript、未使用导入和变量检测等，同时支持 JavaScript 和 TypeScript 两种配置文件格式，适用于现代前端项目的代码质量保障。
 
 ### 核心功能
 
@@ -22,7 +22,11 @@
 
 ## 技术栈
 
-### 核心依赖
+### 运行时依赖
+
+- **jiti**: `^2.6.1` - TypeScript 模块动态加载器，用于支持从 JavaScript 配置文件导入 TypeScript 模块
+
+### 对等依赖
 
 - **@antfu/eslint-config**: `^6.0.0` - 基础 ESLint 配置
 - **eslint**: `^9.0.0` - ESLint 核心
@@ -30,8 +34,10 @@
 
 ### 开发依赖
 
+- **@antfu/eslint-config**: `^6.2.0` - 开发时使用的 ESLint 配置（用于项目自身）
+- **eslint**: `^9.39.1` - ESLint 核心（用于项目自身）
+- **eslint-plugin-unused-imports**: `^4.3.0` - 未使用导入检测插件（用于项目自身）
 - **TypeScript**: `^5.9.3` - TypeScript 编译器
-- **jiti**: `^2.6.1` - TypeScript 配置文件加载器
 
 ## 目录结构
 
@@ -47,7 +53,8 @@ eslint-config/
 │   └── index.ts           # 配置模块聚合导出
 ├── eslint.config.js       # ESLint 配置示例（JavaScript）
 ├── eslint.config.ts       # ESLint 配置示例（TypeScript）
-├── index.ts               # 主入口文件
+├── index.js               # 主入口文件（JavaScript 包装，用于支持 JS 配置文件）
+├── index.ts               # 主入口文件（TypeScript 实现）
 ├── package.json           # 项目配置文件
 ├── tsconfig.json          # TypeScript 配置
 └── README.md              # 项目文档
@@ -93,14 +100,14 @@ yarn add -D @iswangh/eslint-config
  * @ts-check
  */
 
-import wangh from '@iswangh/eslint-config'
+import iswangh from '@iswangh/eslint-config'
 
 /**
  * ESLint 配置
  *
  * @type {ReturnType<typeof import('@antfu/eslint-config').default>}
  */
-export default wangh()
+export default iswangh()
 ```
 
 #### TypeScript 配置文件
@@ -108,19 +115,19 @@ export default wangh()
 创建 `eslint.config.ts`：
 
 ```typescript
-import wangh from '@iswangh/eslint-config'
+import iswangh from '@iswangh/eslint-config'
 
-export default wangh()
+export default iswangh()
 ```
 
 #### 自定义配置
 
-`wangh()` 函数支持传递 [@antfu/eslint-config](https://github.com/antfu/eslint-config) 的所有选项，以及额外的配置对象：
+`iswangh()` 函数支持传递 [@antfu/eslint-config](https://github.com/antfu/eslint-config) 的所有选项，以及额外的配置对象：
 
 ```typescript
-import wangh from '@iswangh/eslint-config'
+import iswangh from '@iswangh/eslint-config'
 
-export default wangh(
+export default iswangh(
   {
     vue: true,
     typescript: true,

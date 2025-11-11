@@ -5,11 +5,11 @@
  * @ts-check
  */
 
-import wangh from '@iswangh/eslint-config'
+import iswangh from '@iswangh/eslint-config'
 
 /**
  * ESLint 配置
  *
  * @type {ReturnType<typeof import('@antfu/eslint-config').default>}
  */
-export default wangh()
+export default iswangh()
