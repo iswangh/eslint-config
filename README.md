@@ -25,7 +25,7 @@
 ### 运行时依赖
 
 - **@antfu/eslint-config**: `^6.2.0` - 基础 ESLint 配置（自动安装，用户无需单独安装）
-- **eslint-plugin-format**: `^1.0.0` - 代码格式化插件（自动安装，用户无需单独安装）
+- **eslint-plugin-format**: `^1.0.2` - 代码格式化插件（自动安装，用户无需单独安装）
 - **eslint-plugin-unused-imports**: `^4.3.0` - 未使用导入检测插件（自动安装，用户无需单独安装）
 - **jiti**: `^2.6.1` - TypeScript 模块动态加载器，用于支持从 JavaScript 配置文件导入 TypeScript 模块
 
@@ -35,10 +35,7 @@
 
 ### 开发依赖
 
-- **@antfu/eslint-config**: `^6.2.0` - 开发时使用的 ESLint 配置（用于项目自身）
 - **eslint**: `^9.39.1` - ESLint 核心（用于项目自身）
-- **eslint-plugin-format**: `^1.0.2` - 代码格式化插件（用于项目自身）
-- **eslint-plugin-unused-imports**: `^4.3.0` - 未使用导入检测插件（用于项目自身）
 - **TypeScript**: `^5.9.3` - TypeScript 编译器
 
 ## 目录结构
