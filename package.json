@@ -9,6 +9,9 @@
     "type": "git",
     "url": "https://gitee.com/iswangh/eslint-config.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "eslint",
     "eslint-config",
@@ -34,10 +37,10 @@
     "lint:fix": "eslint . --fix",
     "prepublishOnly": "nr lint",
     "version": "git add -A",
-    "publish": "pnpm publish --access public",
-    "publish:patch": "pnpm version patch && nr publish",
-    "publish:minor": "pnpm version minor && nr publish",
-    "publish:major": "pnpm version major && nr publish"
+    "publish": "pnpm publish",
+    "publish:patch": "pnpm version patch && pnpm publish",
+    "publish:minor": "pnpm version minor && pnpm publish",
+    "publish:major": "pnpm version major && pnpm publish"
   },
   "peerDependencies": {
     "@antfu/eslint-config": "^6.0.0",
