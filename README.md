@@ -24,14 +24,14 @@
 
 ### 运行时依赖
 
+- **@antfu/eslint-config**: `^6.2.0` - 基础 ESLint 配置（自动安装，用户无需单独安装）
+- **eslint-plugin-format**: `^1.0.0` - 代码格式化插件（自动安装，用户无需单独安装）
+- **eslint-plugin-unused-imports**: `^4.3.0` - 未使用导入检测插件（自动安装，用户无需单独安装）
 - **jiti**: `^2.6.1` - TypeScript 模块动态加载器，用于支持从 JavaScript 配置文件导入 TypeScript 模块
 
 ### 对等依赖
 
-- **@antfu/eslint-config**: `^6.2.0` - 基础 ESLint 配置
-- **eslint**: `^9.0.0` - ESLint 核心
-- **eslint-plugin-format**: `^1.0.0` - 代码格式化插件
-- **eslint-plugin-unused-imports**: `^4.3.0` - 未使用导入检测插件
+- **eslint**: `^9.0.0` - ESLint 核心（用户项目必须安装）
 
 ### 开发依赖
 
