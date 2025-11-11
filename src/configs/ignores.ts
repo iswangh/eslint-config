@@ -8,6 +8,10 @@ import type { TypedFlatConfigItem } from '@antfu/eslint-config'
 
 /**
  * 忽略文件配置
+ *
+ * 定义 ESLint 需要忽略的文件和目录模式
+ *
+ * @type {TypedFlatConfigItem[]}
  */
 export const ignoresConfig: TypedFlatConfigItem[] = [
   {

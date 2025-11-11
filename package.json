@@ -26,16 +26,15 @@
   "main": "./index.js",
   "files": [
     "README.md",
-    "configs",
-    "eslint.config.js",
-    "eslint.config.ts",
     "index.js",
     "index.ts",
-    "scripts"
+    "src"
   ],
   "scripts": {
+    "prepare": "husky",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "type-check": "tsc --noEmit",
     "check:branch": "node scripts/check-branch.js",
     "prepublishOnly": "pnpm run lint",
     "version": "git add -A",
@@ -44,17 +43,23 @@
     "publish:major": "pnpm run check:branch && pnpm version major && pnpm publish"
   },
   "peerDependencies": {
-    "@antfu/eslint-config": "^6.0.0",
+    "@antfu/eslint-config": "^6.2.0",
     "eslint": "^9.0.0",
-    "eslint-plugin-unused-imports": "^4.0.0"
+    "eslint-plugin-format": "^1.0.0",
+    "eslint-plugin-unused-imports": "^4.3.0"
   },
   "dependencies": {
     "jiti": "^2.6.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.2.0",
+    "@commitlint/cli": "^20.1.0",
+    "@iswangh/commitlint-config": "^0.1.2",
     "eslint": "^9.39.1",
+    "eslint-plugin-format": "^1.0.2",
     "eslint-plugin-unused-imports": "^4.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
     "typescript": "^5.9.3"
   }
 }

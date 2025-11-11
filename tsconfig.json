@@ -7,21 +7,27 @@
     "resolveJsonModule": true,
     "allowImportingTsExtensions": false,
     "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "noEmit": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "verbatimModuleSyntax": false,
     "skipLibCheck": true
   },
   "include": [
     "index.ts",
-    "index.js",
-    "configs/**/*",
+    "src/**/*",
     "eslint.config.ts",
-    "eslint.config.js"
+    "scripts/**/*.ts"
   ],
   "exclude": [
     "node_modules",
-    "dist"
+    "dist",
+    "**/*.js"
   ]
 }

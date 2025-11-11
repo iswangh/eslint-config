@@ -8,6 +8,10 @@ import type { TypedFlatConfigItem } from '@antfu/eslint-config'
 
 /**
  * 全局规则配置
+ *
+ * 包含适用于所有文件的通用 ESLint 规则
+ *
+ * @type {TypedFlatConfigItem[]}
  */
 export const globalConfig: TypedFlatConfigItem[] = [
   {
@@ -15,8 +19,10 @@ export const globalConfig: TypedFlatConfigItem[] = [
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'padding-line-between-statements': [
         'error',
-        { blankLine: 'always', prev: 'import', next: '*' }, // import 语句后需要空行
-        { blankLine: 'never', prev: '*', next: 'import' }, // 禁止 import 前有空行
+        // import 语句后需要空行
+        { blankLine: 'always', prev: 'import', next: '*' },
+        // 禁止 import 前有空行
+        { blankLine: 'never', prev: '*', next: 'import' },
       ],
     },
   },

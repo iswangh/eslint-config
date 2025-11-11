@@ -9,7 +9,7 @@
 
 import type { OptionsConfig, TypedFlatConfigItem } from '@antfu/eslint-config'
 import antfu from '@antfu/eslint-config'
-import { antfuConfig, globalConfig, ignoresConfig, typescriptConfig, unusedImportsConfig, vueConfig } from './configs'
+import { antfuConfig, globalConfig, ignoresConfig, typescriptConfig, unusedImportsConfig, vueConfig } from './src'
 
 /**
  * ESLint 配置函数
