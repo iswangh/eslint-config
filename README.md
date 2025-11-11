@@ -148,6 +148,75 @@ export default iswangh(
 
 **注意**：用户传入的规则会覆盖封装的规则，确保用户配置优先级最高。
 
+### VS Code 推荐配置
+
+为了在 VS Code 中获得最佳的开发体验，建议在项目根目录创建 `.vscode/settings.json` 文件，并添加以下配置：
+
+```json
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "eslint.useFlatConfig": true,
+  "eslint.rules.customizations": [
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "format/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
+  ],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
+  ],
+  "prettier.enabled": false,
+  "markdownlint": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "eslint.config.*": ".eslint*,.editorconfig, lint-staged*, commitlint*",
+    "tsconfig.json": "tsconfig.*.json",
+    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
+    "package.json": ".gitattributes,.gitignore,pnpm-lock.yaml,pnpm-workspace.yaml",
+    ".env": ".env*"
+  }
+}
+```
+
+**配置说明**：
+
+- **`eslint.useFlatConfig: true`**：启用 ESLint 扁平配置支持（ESLint 9.x 必需）
+- **`editor.codeActionsOnSave`**：保存时自动修复 ESLint 错误，但不自动整理导入
+- **`eslint.rules.customizations`**：在编辑器中关闭样式相关规则的提示，减少干扰，但仍会在保存时自动修复
+- **`eslint.validate`**：为所有支持的语言启用 ESLint 检查
+- **`explorer.fileNesting`**：启用文件嵌套功能，让项目结构更清晰
+
 ## 配置说明
 
 本配置基于 `@antfu/eslint-config`，并添加了以下自定义规则。配置按以下顺序加载：Antfu 基础配置 → Unused Imports 配置 → 全局规则 → TypeScript 规则 → Vue 规则 → 忽略文件配置。
