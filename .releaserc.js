@@ -6,14 +6,14 @@
  */
 
 import process from 'node:process'
-import verifyConditions from './scripts/semantic-release-verify.js'
+import { semanticReleaseVerify } from './scripts/index.js'
 
 // 根据环境变量决定是否启用 GitHub 插件
 // 手动发布时：不设置 GITHUB_TOKEN 或设置为空字符串，GitHub 插件会被跳过
 // 自动发布时：在 CI/CD 中设置 GITHUB_TOKEN，GitHub 插件会正常工作
 const plugins = [
   // 自定义验证（lint 和 type-check）
-  verifyConditions,
+  semanticReleaseVerify,
   [
     '@semantic-release/commit-analyzer',
     {
