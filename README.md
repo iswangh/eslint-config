@@ -174,24 +174,67 @@ export default iswangh(
 
 ```json
 {
+  // ==========================================
+  // 编辑器基础配置
+  // ==========================================
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+    "source.fixAll.eslint": "explicit", // 保存时自动修复ESLint错误
+    "source.organizeImports": "never" // 禁止保存时自动整理导入语句
   },
-  "eslint.useFlatConfig": true,
+  // ==========================================
+  // 语言工具配置
+  // ==========================================
+  "javascript.updateImportsOnFileMove.enabled": "always", // 自动更新JS导入
+  "typescript.updateImportsOnFileMove.enabled": "always", // 自动更新TS导入
+  // ==========================================
+  // ESLint 配置
+  // ==========================================
+  "eslint.useFlatConfig": true, // 使用扁平配置文件
+  // 集成开发环境中的语法规则，但仍能自动进行修正（增加开发调试体验）
   "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off" },
-    { "rule": "format/*", "severity": "off" },
-    { "rule": "*-indent", "severity": "off" },
-    { "rule": "*-spacing", "severity": "off" },
-    { "rule": "*-spaces", "severity": "off" },
-    { "rule": "*-order", "severity": "off" },
-    { "rule": "*-dangle", "severity": "off" },
-    { "rule": "*-newline", "severity": "off" },
-    { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" }
+    {
+      "rule": "style/*",
+      "severity": "off"
+    },
+    {
+      "rule": "format/*",
+      "severity": "off"
+    },
+    {
+      "rule": "*-indent",
+      "severity": "off"
+    },
+    {
+      "rule": "*-spacing",
+      "severity": "off"
+    },
+    {
+      "rule": "*-spaces",
+      "severity": "off"
+    },
+    {
+      "rule": "*-order",
+      "severity": "off"
+    },
+    {
+      "rule": "*-dangle",
+      "severity": "off"
+    },
+    {
+      "rule": "*-newline",
+      "severity": "off"
+    },
+    {
+      "rule": "*quotes",
+      "severity": "off"
+    },
+    {
+      "rule": "*semi",
+      "severity": "off"
+    }
   ],
+  // 为所有支持的语言启用eslint
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -213,19 +256,24 @@ export default iswangh(
     "pcss",
     "postcss"
   ],
-  "prettier.enabled": false,
-  "markdownlint": false,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.expand": false,
+  // ==========================================
+  // 格式化工具配置
+  // ==========================================
+  "prettier.enable": false,
+  "markdownlint.enable": false,
+  // ==========================================
+  // 文件管理配置
+  // ==========================================
+  "explorer.fileNesting.enabled": true, // 启用文件嵌套功能
+  "explorer.fileNesting.expand": false, // 不展开文件
   "explorer.fileNesting.patterns": {
     "eslint.config.*": ".eslint*,.editorconfig, lint-staged*, commitlint*",
     "tsconfig.json": "tsconfig.*.json",
     "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
     "package.json": ".gitattributes,.gitignore,pnpm-lock.yaml,pnpm-workspace.yaml",
+    "README.md": "*.md",
     ".env": ".env*"
-  }
+  },
 }
 ```
 
