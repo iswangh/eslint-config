@@ -14,7 +14,18 @@ import verifyConditions from './scripts/semantic-release-verify.js'
 const plugins = [
   // 自定义验证（lint 和 type-check）
   verifyConditions,
-  '@semantic-release/commit-analyzer',
+  [
+    '@semantic-release/commit-analyzer',
+    {
+      preset: 'angular',
+      releaseRules: [
+        // chore 默认不发布，配置为 patch（维护性更新，如依赖更新、配置调整等）
+        { type: 'chore', release: 'patch' },
+        // refactor 默认不发布，配置为 patch
+        { type: 'refactor', release: 'patch' },
+      ],
+    },
+  ],
   '@semantic-release/release-notes-generator',
   [
     '@semantic-release/changelog',
