@@ -32,6 +32,7 @@
 ### 对等依赖
 
 - **eslint**: `^9.0.0` - ESLint 核心（用户项目必须安装）
+- **@unocss/eslint-plugin**: `^66.0.0` - UnoCSS ESLint 插件（可选，仅在启用 `unocss: true` 时需要）
 
 ### 开发依赖
 
@@ -246,6 +247,36 @@ export default iswangh(
 - `antfu/top-level-function: 'off'`：关闭顶级函数检查
 
 **注意**：`vue`、`typescript`、`jsx`、`stylistic` 等选项在 `@antfu/eslint-config` 中默认已开启或自动检测，无需重复设置。
+
+### 可选依赖
+
+本配置支持可选功能，当启用这些功能时，需要安装对应的依赖：
+
+#### UnoCSS 支持
+
+要启用 UnoCSS 支持，需要先安装对应的依赖：
+
+```bash
+# 使用 pnpm（推荐）
+pnpm add -D @unocss/eslint-plugin
+
+# 或使用其他包管理器
+npm install -D @unocss/eslint-plugin
+yarn add -D @unocss/eslint-plugin
+```
+
+然后在配置中启用：
+
+```typescript
+// eslint.config.ts
+import iswangh from '@iswangh/eslint-config'
+
+export default iswangh({
+  unocss: true,
+})
+```
+
+**注意**：如果未安装 `@unocss/eslint-plugin` 就启用了 `unocss: true`，ESLint 会报错提示缺少依赖。请确保在使用前已安装对应的依赖。
 
 ### 全局规则
 

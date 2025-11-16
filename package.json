@@ -39,7 +39,13 @@
     "release:dry-run": "semantic-release --dry-run"
   },
   "peerDependencies": {
+    "@unocss/eslint-plugin": "^66.0.0",
     "eslint": "^9.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@unocss/eslint-plugin": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@antfu/eslint-config": "^6.2.0",
@@ -54,6 +60,7 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.2",
     "@semantic-release/npm": "^13.1.2",
+    "@types/node": "^24.10.1",
     "cross-env": "^10.1.0",
     "eslint": "^9.39.1",
     "husky": "^9.1.7",
