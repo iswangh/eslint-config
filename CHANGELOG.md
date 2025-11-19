@@ -1,3 +1,5 @@
+## [0.2.3](https://gitee.com/iswangh/eslint-config/compare/v0.2.2...v0.2.3) (2025-11-19)
+
 ## [0.2.2](https://gitee.com/iswangh/eslint-config/compare/v0.2.1...v0.2.2) (2025-11-16)
 
 ## [0.2.1](https://gitee.com/iswangh/eslint-config/compare/v0.2.0...v0.2.1) (2025-11-16)
