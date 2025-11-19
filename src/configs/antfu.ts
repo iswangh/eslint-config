@@ -17,7 +17,4 @@ import type { OptionsConfig, TypedFlatConfigItem } from '@antfu/eslint-config'
  */
 export const antfuConfig: OptionsConfig & Omit<TypedFlatConfigItem, 'files'> = {
   formatters: true,
-  rules: {
-    'antfu/top-level-function': 'off',
-  },
 }

@@ -53,7 +53,8 @@ eslint-config/
 │       ├── vue.ts        # Vue 规则配置
 │       └── index.ts      # 配置模块聚合导出
 ├── scripts/              # 脚本目录
-│   └── check-branch.js  # Git 分支检查脚本
+│   ├── semantic-release-verify.js # semantic-release 自定义验证插件
+│   └── index.js         # 脚本模块聚合导出
 ├── eslint.config.js     # ESLint 配置示例（JavaScript）
 ├── eslint.config.ts     # ESLint 配置示例（TypeScript）
 ├── index.js             # 主入口文件（JavaScript 包装，用于支持 JS 配置文件）
@@ -292,7 +293,6 @@ export default iswangh(
 ### Antfu 配置
 
 - `formatters: true`：启用代码格式化支持
-- `antfu/top-level-function: 'off'`：关闭顶级函数检查
 
 **注意**：`vue`、`typescript`、`jsx`、`stylistic` 等选项在 `@antfu/eslint-config` 中默认已开启或自动检测，无需重复设置。
 
