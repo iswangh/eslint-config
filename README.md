@@ -24,20 +24,20 @@
 
 ### 运行时依赖
 
-- **@antfu/eslint-config**: `^6.2.0` - 基础 ESLint 配置（自动安装，用户无需单独安装）
-- **eslint-plugin-format**: `^1.0.2` - 代码格式化插件（自动安装，用户无需单独安装）
-- **eslint-plugin-unused-imports**: `^4.3.0` - 未使用导入检测插件（自动安装，用户无需单独安装）
-- **jiti**: `^2.6.1` - TypeScript 模块动态加载器，用于支持从 JavaScript 配置文件导入 TypeScript 模块
+- **@antfu/eslint-config** - 基础 ESLint 配置（自动安装，用户无需单独安装）
+- **eslint-plugin-format** - 代码格式化插件（自动安装，用户无需单独安装）
+- **eslint-plugin-unused-imports** - 未使用导入检测插件（自动安装，用户无需单独安装）
+- **jiti** - TypeScript 模块动态加载器，用于支持从 JavaScript 配置文件导入 TypeScript 模块
 
 ### 对等依赖
 
-- **eslint**: `^9.0.0` - ESLint 核心（用户项目必须安装）
-- **@unocss/eslint-plugin**: `^66.0.0` - UnoCSS ESLint 插件（可选，仅在启用 `unocss: true` 时需要）
+- **eslint** - ESLint 核心（用户项目必须安装）
+- **@unocss/eslint-plugin** - UnoCSS ESLint 插件（可选，仅在启用 `unocss: true` 时需要）
 
 ### 开发依赖
 
-- **eslint**: `^9.39.1` - ESLint 核心（用于项目自身）
-- **TypeScript**: `^5.9.3` - TypeScript 编译器
+- **eslint** - ESLint 核心（用于项目自身）
+- **TypeScript** - TypeScript 编译器
 
 ## 目录结构
 
@@ -80,7 +80,7 @@ eslint-config/
 # https://volta.sh
 
 # 2) 固定项目 Node.js 版本（示例）
-volta pin node@24.15.0
+volta pin node@lts
 
 # 3) 安装并固定 pnpm（可选，但推荐）
 volta install pnpm
