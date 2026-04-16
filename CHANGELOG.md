@@ -1,3 +1,10 @@
+# [0.3.0](https://gitee.com/iswangh/eslint-config/compare/v0.2.4...v0.3.0) (2026-04-16)
+
+
+### Features
+
+* 添加 .npmrc ([3c44a8b](https://gitee.com/iswangh/eslint-config/commit/3c44a8b4f282919a8a9089c4ccc4dfecba0ec8ca))
+
 ## [0.2.4](https://gitee.com/iswangh/eslint-config/compare/v0.2.3...v0.2.4) (2026-04-16)
 
 ## [0.2.3](https://gitee.com/iswangh/eslint-config/compare/v0.2.2...v0.2.3) (2025-11-19)
