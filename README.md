@@ -71,6 +71,26 @@ eslint-config/
 - Node.js >= 18.0.0
 - 支持 ESM 的包管理器（pnpm、npm、yarn）
 
+### 工具链推荐（Volta + @antfu/ni）
+
+为避免团队内 Node.js / 包管理器版本不一致，推荐使用 Volta 固定运行时版本，并使用 `@antfu/ni` 统一包管理命令：
+
+```bash
+# 1) 安装 Volta（Windows 建议使用官方安装器）
+# https://volta.sh
+
+# 2) 固定项目 Node.js 版本（示例）
+volta pin node@24.15.0
+
+# 3) 安装并固定 pnpm（可选，但推荐）
+volta install pnpm
+
+# 4) 安装 @antfu/ni（全局）
+pnpm add -g @antfu/ni
+```
+
+> `volta pin` 会将版本写入 `package.json` 的 `volta` 字段，确保团队与 CI 使用一致的 Node.js 版本。
+
 ### 安装
 
 推荐使用 `ni`（需要全局安装 `@antfu/ni`）：
