@@ -40,7 +40,7 @@
   },
   "peerDependencies": {
     "@unocss/eslint-plugin": "^66.0.0",
-    "eslint": "^9.0.0"
+    "eslint": "^9.0.0 || ^10.0.0"
   },
   "peerDependenciesMeta": {
     "@unocss/eslint-plugin": {
@@ -48,22 +48,22 @@
     }
   },
   "dependencies": {
-    "@antfu/eslint-config": "^6.2.0",
-    "eslint-plugin-format": "^1.0.2",
-    "eslint-plugin-unused-imports": "^4.3.0",
+    "@antfu/eslint-config": "^8.2.0",
+    "eslint-plugin-format": "^2.0.1",
+    "eslint-plugin-unused-imports": "^4.4.1",
     "jiti": "^2.6.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.1.0",
+    "@commitlint/cli": "^20.5.0",
     "@iswangh/commitlint-config": "^0.2.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@types/node": "^24.10.1",
+    "@types/node": "^25.6.0",
     "cross-env": "^10.1.0",
-    "eslint": "^9.39.1",
+    "eslint": "^10.2.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.6",
-    "semantic-release": "^25.0.2",
-    "typescript": "^5.9.3"
+    "lint-staged": "^16.4.0",
+    "semantic-release": "^25.0.3",
+    "typescript": "^6.0.2"
   }
 }
